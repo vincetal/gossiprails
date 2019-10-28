@@ -1,0 +1,15 @@
+<!-- Affichage principal et des tous les gossips-->
+<br>
+<h3>Bien le bonjour <%= @first_name %> !</h3><br>
+<p class="font-italic">Avant toute chose, saches que la curiosité est un mauvais défaut...</p><br>
+
+<% @gossips.each_with_index do |gossip,index| %>
+  <div class="card">
+    <div class="card-body">
+      <h5><%= link_to "#{gossip[:author]}", user_show_id_path(gossip[:user_id]), class: "text-decoration-none card-title " %></h5>
+      <p class="card-text"><%= gossip[:title] %></p>
+
+    </div>
+  </div>
+  <br>
+  <% end %>
